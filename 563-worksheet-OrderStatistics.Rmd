@@ -1,0 +1,88 @@
+---
+title: "Order statistics"
+author: 
+  - [add  your name]  
+  - [add name of other group members]
+date: "Week 2, Math 563, Sp21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,comment = '', fig.width = 3, fig.height = 3
+  )
+```
+
+
+--- 
+
+# Background 
+
+> What is the purpose of this worksheet? 
+
+1. Learn using basic R, practice  using Markdown;
+2. Create simulations for order statistics.
+
+For more info, formatting, and technical background, see previous handout (on sampling distributions). 
+
+### Installing and loading packages
+
+Just like every other programming language you may be familiar with, R's capabilities can be greatly extended by installing additional "packages" and "libraries".
+
+To **install** a package, use the `install.packages()` command.  You'll want to run the following commands to get the necessary packages for today's lab:
+
+```
+install.packages("ggplot2")
+```
+
+You only need to install packages once.  Once they're installed, you may use them by **loading** the libraries using the `library()` command.  For today's lab, you'll want to run the following code
+
+```{r}
+library(ggplot2) # graphics library
+```
+
+# Problem 1: $N(0,1)$
+
+* Let  us pick sample size $n=10$. Let $X\sim N(0,1)$. 
+* Repeat  the following  $10,000$  times: 
+  * Draw a random sample $X_1,\dots,X_n$ from the  normal  density $f(x)$.  
+  * For $k\in\{1,3,5,9,10\}$, compute the $k$-th statistic $y_k$.  
+* Plot the histogram of  $y_k$ for each $k$. 
+
+```{r}
+# your  code here
+```
+
+> Discuss. What do  you  see? 
+
+
+# Problem 2: $Gamma(1.5,5)$
+
+* Let  us pick sample size $n=25$. Let $X\sim Gamma(1.5,5)$. 
+* Repeat  the following  $10,000$  times: 
+  * Draw a random sample $X_1,\dots,X_n$ from the  normal  density $f(x)$.  
+  * For $k\in\{2,4,16,24\}$ compute the $k$-th statistic $y_k$.  
+* Plot the histogram of  $y_k$ for each $k$. 
+
+```{r}
+# your  code here
+```
+
+
+> Discuss. What do  you  see? 
+
+
+# License
+
+This document  is created for Math 563, Spring 2021, at Illinois Tech, taught by Sonja Petrovic^[Sonja Petrović,  Associate Professor of Applied  Mathematics, College of Computing, Illinios Tech.  [Homepage](https://www.SonjaPetrovicStats.com), [Email](mailto:sonja.petrovic@iit.edu).] 
+
+While the course materials are generally not  to be distributed outside the course without permission of the instructor,  this particular set of notes is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+
+[![Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][image]][hyperlink]
+
+  [hyperlink]: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  [image]: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
+    
+
+

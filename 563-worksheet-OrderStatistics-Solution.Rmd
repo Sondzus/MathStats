@@ -1,0 +1,101 @@
+---
+title: "Order statistics"
+author: 
+  - [Worksheet  solution]
+date: "Week 2, Math 563, Sp21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,comment = '' 
+  )
+```
+
+
+--- 
+
+## Prerequisites  
+### Installing and loading packages
+
+```
+install.packages("ggplot2")
+```
+
+```{r}
+library(ggplot2) # graphics library
+```
+
+## Problem 1: $N(0,1)$
+
+* Let  us pick sample size $n=10$. Let $X\sim N(0,1)$. 
+* Repeat  the following  $10,000$  times: 
+  * Draw a random sample $X_1,\dots,X_n$ from the  normal  density $f(x)$.  
+  * For $k\in\{1,3,5,9,10\}$, compute the $k$-th statistic $y_k$.  
+* Plot the histogram of  $y_k$ for each $k$. 
+
+```{r}
+f <- function(n.sim, n, k=1:n, p=pnorm, d=dnorm, r=rnorm, name, ...) {
+  if (missing(name)) name <- ""
+  k <- sort(unique(k))[1 <= k & k <= n]
+
+  # Perform the simulation.
+  sim <- apply(matrix(r(n.sim*n, ...), nrow=n), 2, sort)[k, , drop=FALSE]
+
+  # Plot the requested order statistics.
+  for (i in 1:length(k)) {
+
+    # Plot the empirical distribution.
+    hist(sim[i, ], freq=FALSE, 
+         xlab="Value",
+         sub=paste(n.sim, "iterations with sample size", n),
+         main=paste(name, "order statistic", k[i]))
+  }
+}
+#
+# Set up to simulate and display the results.
+#
+par(mfrow=c(2,4))
+n.sim <- 1e4
+set.seed(17)
+
+# Study Normal order statistics.
+f(n.sim, 10, c(1,3,5,9), name="Normal(0,1)")
+```
+
+
+
+
+## Problem 2: $Gamma(1.5,5)$
+
+* Let  us pick sample size $n=25$. Let $X\sim Gamma(1.5,5)$. 
+* Repeat  the following  $10,000$  times: 
+  * Draw a random sample $X_1,\dots,X_n$ from the  normal  density $f(x)$.  
+  * For $k\in\{2,4,16,24\}$ compute the $k$-th statistic $y_k$.  
+* Plot the histogram of  $y_k$ for each $k$. 
+
+```{r}
+#
+# Set up to simulate and display the results.
+#
+par(mfrow=c(2,4))
+n.sim <- 1e4
+set.seed(17)
+
+# Study Gamma order statistics.
+# This illustrates how to use `f` for general distributions.
+f(n.sim, 25, c(2, 4, 16, 24), name="Gamma(1.5,5)", 
+  p=pgamma, d=dgamma, r=rgamma, shape=1.5, scale=5)
+```
+
+
+
+
+# Acknowledgement
+
+Sourced from
+[whuber](https://stats.stackexchange.com/users/919/whuber), Simulating order statistics, URL (version: 2017-04-13): [see post](https://stats.stackexchange.com/q/241816)
+
+    
+
+
