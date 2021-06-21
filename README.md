@@ -4,6 +4,15 @@ Some of the notes for course materials on mathematical statistics
 ## Overview
 *under construction*
 
+### Contents 
+
+* [hypothesis tests: reference](https://sondzus.github.io/MathStats/563-HypothesisTests---REFERENCE.html)
+* Sampling distributions [html](https://sondzus.github.io/MathStats/563-SamplingDistributions.html) [rmd](https://sondzus.github.io/MathStats/563-SamplingDistributions.Rmd) [pdf](https://sondzus.github.io/MathStats/563-SamplingDistributions.pdf) 
+* p-value [slides](https://sondzus.github.io/MathStats/563-pValue.pdf)
+* [extra example for p-value](https://sondzus.github.io/MathStats/514-extra-example%20and%20p%20value%20on%20testing.pdf)
+* A worksheet on order statistics [Rmd](https://sondzus.github.io/MathStats/563-worksheet-OrderStatistics.Rmd) [html](https://sondzus.github.io/MathStats/563-worksheet-OrderStatistics.html) 
+    * Solution to the worksheet  [Rmd](https://sondzus.github.io/MathStats/563-worksheet-OrderStatistics-Solution.Rmd) [html](https://sondzus.github.io/MathStats/563-worksheet-OrderStatistics-Solution.html) 
+
 ## Course info
 [Here](https://www.sonjapetrovicstats.com/teaching/563sp21) is the course homepage. 
 
